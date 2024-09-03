@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\akko_\\OneDrive\\Masaüstü\\angular_login_project\\backend\\backend.csproj": {}
+    "C:\\Users\\akko_\\OneDrive\\Belgeler\\GitHub\\angular-login\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\akko_\\OneDrive\\Masaüstü\\angular_login_project\\backend\\backend.csproj": {
+    "C:\\Users\\akko_\\OneDrive\\Belgeler\\GitHub\\angular-login\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\akko_\\OneDrive\\Masaüstü\\angular_login_project\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\akko_\\OneDrive\\Belgeler\\GitHub\\angular-login\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\akko_\\OneDrive\\Masaüstü\\angular_login_project\\backend\\backend.csproj",
+        "projectPath": "C:\\Users\\akko_\\OneDrive\\Belgeler\\GitHub\\angular-login\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\akko_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\akko_\\OneDrive\\Masaüstü\\angular_login_project\\backend\\obj\\",
+        "outputPath": "C:\\Users\\akko_\\OneDrive\\Belgeler\\GitHub\\angular-login\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\akko_\\AppData\\Roaming\\NuGet\\NuGet.Config",

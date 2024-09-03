@@ -121,7 +121,7 @@ This project is a complete full-stack application that includes a .NET backend f
    - Or run the application locally using a web server like `http-server`:
 
    ```bash
-   npx http-server dist/new-project
+   ng serve
    ```
 
 ## Configuration
@@ -159,7 +159,11 @@ The login page is a crucial component of the application where users can authent
 
 Here is an image of the login page:
 
-![Login Page](./img1)
+![Login Page](./img2.JPG)
+
+Since the user logged in, navbar and home should seem like this.
+
+![Login Page](./img3.JPG)
 
 ### Registration Page
 
@@ -173,7 +177,7 @@ The registration page allows new users to create an account. The form collects t
 
 Here is an image of the registration page:
 
-![Registration Page](./img2)
+![Registration Page](./img1.JPG)
 
 ## License
 

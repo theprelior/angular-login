@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "alWshPR1PN0rg6Tj1TgAQ27gXXPOsvyDp9L242IL6DU7uN6kFtmymRFgwgdljTMvjI+QZGpRSQaHnx2qkflymw==",
+  "dgSpecHash": "+WqjFah96zWfo8tOQZP6vlIy1pfZwdFtKBKAABQl3m7Cxx32V20bnR9ubv400ptBRL3SNLJbeUUqUoz150/3+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\akko_\\OneDrive\\Masaüstü\\angular_login_project\\backend\\backend.csproj",
+  "projectFilePath": "C:\\Users\\akko_\\OneDrive\\Belgeler\\GitHub\\angular-login\\backend\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\akko_\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\akko_\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
