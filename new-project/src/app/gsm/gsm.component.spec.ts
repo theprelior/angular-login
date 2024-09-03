@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { GsmComponent } from './gsm.component';
+
+describe('GsmComponent', () => {
+  let component: GsmComponent;
+  let fixture: ComponentFixture<GsmComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ GsmComponent ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(GsmComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

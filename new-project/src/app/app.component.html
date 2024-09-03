@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<div class="content" role="main" *ngIf="!authService.isLoggedIn()">
+    <h1>Hello Please <a routerLink="/login">Login</a> or <a routerLink="/register">Register</a></h1>
+</div>
+
+<div class="container mt-4" *ngIf="authService.isLoggedIn()">
+    <h1>Latest News</h1>
+    <div class="news-item">
+        <h4>News Title 1</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et turpis quis neque luctus dictum.</p>
+    </div>
+    <div class="news-item">
+        <h4>News Title 2</h4>
+        <p>Curabitur non ligula eu odio vulputate consequat. Integer eu ex nisi.</p>
+    </div>
+    <div class="news-item">
+        <h4>News Title 3</h4>
+        <p>Aliquam erat volutpat. Proin vel massa at quam convallis tincidunt.</p>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

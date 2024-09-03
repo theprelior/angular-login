@@ -1,0 +1,20 @@
+::ng-deep .phoneNumberInput {
+    display: flex;
+  }
+  
+  ::ng-deep .countrySelectBox {
+    margin-right: 5px;
+  }
+  
+  ::ng-deep .inputBox {
+    margin-left: 5px;
+  }
+  
+  ::ng-deep .errorMessage {
+    color: RED;
+    margin: 0;
+  }
+  
+  ::ng-deep .mainDiv {
+    display: flex;
+  }
