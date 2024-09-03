@@ -124,3 +124,114 @@ MongoDB Compass is used to visualize and manage the database. Below is a screens
 
 ![MongoCompass](./img4.JPG)
 
+Here are the specific sections in your `ValuesController` where MongoDB is used:
+
+---
+
+### MongoDB Usage in `ValuesController`
+
+In the `ValuesController`, MongoDB is utilized primarily to interact with the `users` collection for user registration, login, and retrieval of user data. Below are the key methods where MongoDB is accessed:
+
+#### 1. **Registering a User (`Register` method)**
+
+In the `Register` method, MongoDB is used to:
+- Check if the username or email is already taken using the `IsUsernameTakenAsync` and `IsEmailTakenAsync` methods from `MongoDBContext`.
+- Insert a new user into the `users` collection.
+
+```csharp
+[HttpPost("register")]
+public async Task<IActionResult> Register([FromBody] User user)
+{
+    if (user == null)
+    {
+        return BadRequest(new { message = "Invalid user data." });
+    }
+
+    Console.WriteLine($"Received User: {user.Username}, {user.Email}, {user.Password}, {user.Dob}, {user.Phone.Number}");
+    
+    if (string.IsNullOrEmpty(user.Username) ||
+        string.IsNullOrEmpty(user.Email) ||
+        string.IsNullOrEmpty(user.Password) ||
+        string.IsNullOrEmpty(user.Dob))
+    {
+        return BadRequest(new { message = "All fields are required." });
+    }
+
+    if (await _context.IsUsernameTakenAsync(user.Username))
+    {
+        return BadRequest(new { message = "Username is already taken." });
+    }
+
+    if (await _context.IsEmailTakenAsync(user.Email))
+    {
+        return BadRequest(new { message = "Email is already taken." });
+    }
+
+    user.Password = _passwordHasher.HashPassword(user, user.Password); // Password encrypting
+    await _context.Users.InsertOneAsync(user);
+    return Ok(new { message = "User registered successfully!" });
+}
+```
+
+#### 2. **Retrieving All Users (`GetUsers` method)**
+
+In the `GetUsers` method, MongoDB is used to:
+- Fetch all users from the `users` collection.
+
+```csharp
+[HttpGet("users")]
+public async Task<IActionResult> GetUsers()
+{
+    var users = await _context.Users.Find(_ => true).ToListAsync();
+    return Ok(users);
+}
+```
+
+#### 3. **User Login (`Login` method)**
+
+In the `Login` method, MongoDB is used to:
+- Find a user by their username in the `users` collection.
+- Verify the hashed password for authentication.
+
+```csharp
+[HttpPost("login")]
+public async Task<IActionResult> Login([FromBody] LoginData loginData)
+{
+    var user = await _context.Users.Find(u => u.Username == loginData.Username).FirstOrDefaultAsync();
+
+    if (user == null)
+    {
+        return Unauthorized(new { success = false, message = "Invalid credentials" });
+    }
+
+    var result = _passwordHasher.VerifyHashedPassword(user, user.Password, loginData.Password);
+
+    if (result == PasswordVerificationResult.Success)
+    {
+        var token = _authService.GenerateJwtToken(user);
+        return Ok(new { success = true, token, username = user.Username });
+    }
+    else
+    {
+        return Unauthorized(new { success = false, message = "Invalid credentials" });
+    }
+}
+```
+
+#### 4. **Dependency Injection in the Constructor**
+
+MongoDB is integrated into the controller through dependency injection of the `MongoDBContext` in the constructor:
+
+```csharp
+private readonly MongoDBContext _context;
+
+public ValuesController(MongoDBContext context, AuthService authService)
+{
+    _context = context;
+    _passwordHasher = new PasswordHasher<User>();
+    _authService = authService;
+}
+```
+
+This context provides access to the `users` collection and methods for interacting with the database.
+
