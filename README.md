@@ -102,7 +102,7 @@ This project is a complete full-stack application that includes a .NET backend f
 
 3. **Build the Application:**
 
-   The frontend has already been built, and the build files are located in the `dist/new-project` directory.
+   The frontend has already been built, and the build files are located in the `/new-project/dist` directory.
 
    To manually build (if needed):
 
@@ -112,7 +112,7 @@ This project is a complete full-stack application that includes a .NET backend f
 
 4. **Deploy or Run Locally:**
 
-   - Deploy the contents of the `dist/new-project` directory to your web server.
+   - Deploy the contents of the `new-project/dist` directory to your web server.
    - Or run the application locally using a web server like `http-server`:
 
    ```bash
@@ -130,14 +130,14 @@ This project is a complete full-stack application that includes a .NET backend f
 ## Building the Project
 
 - **Backend:** Already built and published in `backend/bin/Release/net7.0`.
-- **Frontend:** Already built in `dist/new-project`.
+- **Frontend:** Already built in `new-project/dist/`.
 
 ## Running the Application
 
 To run the application:
 
 1. Start the backend by navigating to `backend/bin/Release/net7.0` and running `dotnet YourApp.dll`.
-2. Serve the frontend files from the `dist/new-project` directory using a web server.
+2. Serve the frontend files from the `new-project/dist/` directory using a web server.
 
 ## License
 
