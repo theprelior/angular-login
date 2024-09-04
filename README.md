@@ -39,8 +39,8 @@ This project is a complete full-stack application that includes a .NET backend f
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo/backend
+   git clone https://github.com/theprelior/angular-login.git
+   cd angular-login/backend
    ```
 
 2. **Restore Dependencies:**
